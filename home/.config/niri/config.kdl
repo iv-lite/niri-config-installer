@@ -42,7 +42,7 @@ output "DP-2" {
 
 binds {
     Ctrl+Up { toggle-overview; }
-    Mod+Q { quit; }
+    Mod+Q { close-window; }
     // Mod+Up { focus-column-up; }
     // Mod+Down { focus-column-down; }
     Mod+M { maximize-column; }
