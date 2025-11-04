@@ -29,7 +29,6 @@ layout {
     }
 
     border {
-        on
         width 4
         active-color "#2b303cd4"
         inactive-color "#2b303cd6"
@@ -47,7 +46,6 @@ layout {
     }
 
     tab-indicator {
-        on
         hide-when-single-tab
         place-within-column
         gap 5
@@ -62,8 +60,6 @@ layout {
     }
 
     insert-hint {
-        // off
-        on
         color "#2b303cd6"
     }
 

@@ -3,7 +3,7 @@ binds {
     Mod+Q { quit; }
     // Mod+Up { focus-column-up; }
     // Mod+Down { focus-column-down; }
-    Mod+M { maximize-window-to-edges; }
+    Mod+M { maximize-column; }
     Mod+F { switch-focus-between-floating-and-tiling; }
     Mod+Right { focus-column-right; }
     Mod+Left { focus-column-left; }
