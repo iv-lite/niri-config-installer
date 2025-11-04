@@ -1,0 +1,21 @@
+binds {
+    Ctrl+Up { toggle-overview; }
+    Mod+Q { quit; }
+    // Mod+Up { focus-column-up; }
+    // Mod+Down { focus-column-down; }
+    Mod+M { maximize-window-to-edges; }
+    Mod+F { switch-focus-between-floating-and-tiling; }
+    Mod+Right { focus-column-right; }
+    Mod+Left { focus-column-left; }
+    Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp   cooldown-ms=150 { focus-workspace-up; }
+    Mod+WheelScrollRight    { focus-column-right; }
+    Mod+WheelScrollLeft     { focus-column-left; }
+
+    Super+Alt+L { spawn "hyprlock"; }
+    Super+Alt+F { spawn "nautilus"; }
+    Ctrl+Alt+T { spawn "ghostty"; }
+    Mod+Space { spawn-sh "rofi -show combi | xargs hyprctl dispatch exec --"; }
+
+    Ctrl+Alt+Print { screenshot; }
+}
