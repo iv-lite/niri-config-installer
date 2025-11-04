@@ -11,6 +11,7 @@ spawn-sh-at-startup "gsettings set org.gnome.desktop.interface icon-theme 'Qogir
 spawn-sh-at-startup "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
 spawn-sh-at-startup "gsettings set org.gnome.desktop.interface font-name 'Roboto Mono'"
 spawn-sh-at-startup "dconf write /org/gnome/desktop/interface/color-scheme '\"prefer-dark\"'"
+spawn-sh-at-startup "dconf write /org/gnome/shell/extensions/user-theme/name \"'Qogir-Round-Dark'\""
 
 prefer-no-csd
 
