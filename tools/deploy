@@ -2,7 +2,7 @@
 
 cd "$(dirname ${BASH_SOURCE[0]})/../"
 
-cp -r ./home/* ${HOME}/
+cp -a ./home/. ${HOME}/
 
 sudo sed -i -e 's/#fr_CH.UTF-8 UTF-8/fr_CH.UTF-8 UTF-8/g' /etc/locale.gen
 sudo locale-gen
