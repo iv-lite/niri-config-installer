@@ -6,12 +6,12 @@ spawn-at-startup "mako"
 spawn-at-startup "hypridle"
 spawn-at-startup "hyprpaper"
 spawn-sh-at-startup "nm-applet --indicator"
-spawn-sh-at-startup "gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Dark'"
+spawn-sh-at-startup "gsettings set org.gnome.desktop.interface gtk-theme 'Nordic'"
 spawn-sh-at-startup "gsettings set org.gnome.desktop.interface icon-theme 'Qogir-Dark'"
 spawn-sh-at-startup "gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
 spawn-sh-at-startup "gsettings set org.gnome.desktop.interface font-name 'Roboto Mono'"
 spawn-sh-at-startup "dconf write /org/gnome/desktop/interface/color-scheme '\"prefer-dark\"'"
-spawn-sh-at-startup "dconf write /org/gnome/shell/extensions/user-theme/name \"'Arc-Dark'\""
+spawn-sh-at-startup "dconf write /org/gnome/shell/extensions/user-theme/name \"'Nordic'\""
 
 prefer-no-csd
 

@@ -65,7 +65,7 @@ export packages="\
     meson \
     cpio \
     cliphist \
-    arc-gtk-theme \
+    nordic-theme \
     qogir-icon-theme \
     papirus-icon-theme \
     waybar \
