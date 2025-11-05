@@ -44,13 +44,22 @@ binds {
     Ctrl+Up { toggle-overview; }
     Ctrl+Right { focus-monitor-right; }
     Ctrl+Left { focus-monitor-left; }
+    
     Mod+Q { close-window; }
-    // Mod+Up { focus-column-up; }
-    // Mod+Down { focus-column-down; }
     Mod+M { maximize-column; }
     Mod+F { switch-focus-between-floating-and-tiling; }
+
     Mod+Right { focus-column-right; }
     Mod+Left { focus-column-left; }
+
+    Mod+Up { focus-workspace-up; }
+    Mod+Down { focus-workspace-down; }
+
+    Mod+Shift+Left { move-column-to-monitor-left; }
+    Mod+Shift+Right { move-column-to-monitor-right; }
+    Mod+Shift+Up { move-column-to-workspace-up; }
+    Mod+Shift+Down { move-column-to-workspace-down; }
+
     Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
     Mod+WheelScrollUp   cooldown-ms=150 { focus-workspace-up; }
     Mod+WheelScrollRight    { focus-column-right; }
@@ -77,7 +86,7 @@ binds {
 }
 
 layout {
-    gaps 8
+    gaps 16
     center-focused-column "never"
     always-center-single-column
     empty-workspace-above-first
