@@ -17,7 +17,7 @@ font_name = "Roboto Mono"
 icon_theme_name = "Qogir-Dark"
 
 # GTK theme name
-theme_name = "Arc-Dark"
+theme_name = "Qogir-Round-Dark"
 
 [commands]
 reboot = ["systemctl", "reboot"]
