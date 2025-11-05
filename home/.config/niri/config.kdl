@@ -77,8 +77,8 @@ binds {
     XF86MonBrightnessUp allow-when-locked=true { spawn-sh "gdbus call -e -d de.mherzberg -o /de/mherzberg/wlrbrightness -m de.mherzberg.wlrbrightness.increase 0.1"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn-sh "gdbus call -e -d de.mherzberg -o /de/mherzberg/wlrbrightness -m de.mherzberg.wlrbrightness.decrease 0.1"; }
 
-    Super+Alt+L { spawn "hyprlock"; }
-    Super+Alt+F { spawn "nautilus"; }
+    Mod+Shift+L { spawn "hyprlock"; }
+    Ctrl+Alt+F { spawn "nautilus"; }
     Ctrl+Alt+T { spawn "ghostty"; }
     Mod+Space { spawn-sh "rofi -show combi | xargs hyprctl dispatch exec --"; }
 
