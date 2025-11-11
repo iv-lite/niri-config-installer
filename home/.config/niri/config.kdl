@@ -92,7 +92,7 @@ binds {
 layout {
     gaps 8
     center-focused-column "never"
-    always-center-single-column
+    // always-center-single-column
     empty-workspace-above-first
     default-column-display "tabbed"
     background-color "#2b303cd6"
