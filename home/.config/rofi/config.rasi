@@ -1,5 +1,6 @@
 configuration {
   modes: [ combi, drun, calc, run ];
+  combi-modes: [ drun, calc, run ];
   combi-display-format: "{mode} {text}";
   fixed-num-lines: false;
   lines: 2;
