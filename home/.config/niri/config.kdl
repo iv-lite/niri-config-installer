@@ -47,13 +47,17 @@ binds {
     
     Mod+Q { close-window; }
     Mod+M { maximize-column; }
-    Mod+F { switch-focus-between-floating-and-tiling; }
+    Mod+F { fullscreen-window; }
+    Mod+P { toggle-window-floating; }
 
     Mod+Right { focus-column-right; }
     Mod+Left { focus-column-left; }
 
     Mod+Up { focus-workspace-up; }
     Mod+Down { focus-workspace-down; }
+
+    Super+Alt+Left { move-column-left; }
+    Super+Alt+Right { move-column-right; }
 
     Mod+Shift+Left { move-column-to-monitor-left; }
     Mod+Shift+Right { move-column-to-monitor-right; }
@@ -86,18 +90,18 @@ binds {
 }
 
 layout {
-    gaps 16
+    gaps 8
     center-focused-column "never"
     always-center-single-column
     empty-workspace-above-first
-    default-column-display "normal"
+    default-column-display "tabbed"
     background-color "#2b303cd6"
 
-    default-column-width {}
+    default-column-width { }
 
-    preset-window-heights {
-        proportion 1.0
-    }
+    // preset-window-heights {
+    //     proportion 1.0;
+    // }
 
     focus-ring {
         off
@@ -127,14 +131,15 @@ layout {
     tab-indicator {
         hide-when-single-tab
         gap 1
-        width 4
+        width 16
         length total-proportion=1.0
-        position "left"
+        position "top"
         gaps-between-tabs 4
         corner-radius 8
-        active-color "#caccd0d6"
-        inactive-color "#caccd09c"
-        urgent-color "#3c302be6"
+        place-within-column
+        active-color "#343c4dff"
+        inactive-color "#2b303cd6"
+        urgent-color "#3c2b33f0"
     }
 
     insert-hint {
@@ -142,10 +147,10 @@ layout {
     }
 
     struts {
-        // left 64
-        // right 64
-        // top 64
-        // bottom 64
+        left 12
+        right 12
+        top 12
+        bottom 12
     }
 }
 
@@ -179,7 +184,6 @@ cursor {
     xcursor-size 24
 
     hide-when-typing
-    hide-after-inactive-ms 1000
 }
 
 overview {
@@ -213,7 +217,6 @@ config-notification {
 }
 
 window-rule {
-    open-maximized true
     geometry-corner-radius 2
     clip-to-geometry true
     tiled-state true
