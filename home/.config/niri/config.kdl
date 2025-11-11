@@ -42,8 +42,8 @@ output "DP-2" {
 
 binds {
     Ctrl+Up { toggle-overview; }
-    Ctrl+Right { focus-monitor-right; }
-    Ctrl+Left { focus-monitor-left; }
+    Ctrl+Alt+Right { focus-monitor-right; }
+    Ctrl+Alt+Left { focus-monitor-left; }
     
     Mod+Q { close-window; }
     Mod+M { maximize-column; }
