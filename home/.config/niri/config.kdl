@@ -84,7 +84,7 @@ binds {
     Mod+Shift+L { spawn "hyprlock"; }
     Ctrl+Alt+F { spawn "nautilus"; }
     Ctrl+Alt+T { spawn "ghostty"; }
-    Mod+Space { spawn-sh "rofi -show combi | xargs hyprctl dispatch exec --"; }
+    Mod+Space { spawn-sh "rofi -show combi"; }
 
     Ctrl+Alt+Print { screenshot; }
 }
