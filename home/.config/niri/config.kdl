@@ -1,5 +1,5 @@
 input {
-    focus-follows-mouse max-scroll-amount="50%"
+    focus-follows-mouse max-scroll-amount="100%"
 
     keyboard {
         xkb {
@@ -46,6 +46,8 @@ binds {
     Ctrl+Alt+Left { focus-monitor-left; }
     
     Mod+Q { close-window; }
+    Mod+W {switch-preset-column-width;}
+    Mod+H {switch-preset-window-height;}
     Mod+M { maximize-column; }
     Mod+F { fullscreen-window; }
     Mod+P { toggle-window-floating; }
@@ -58,6 +60,8 @@ binds {
 
     Super+Alt+Left { move-column-left; }
     Super+Alt+Right { move-column-right; }
+    Super+Alt+Up { move-window-up; }
+    Super+Alt+Down { move-window-down; }
 
     Mod+Shift+Left { move-column-to-monitor-left; }
     Mod+Shift+Right { move-column-to-monitor-right; }
@@ -94,14 +98,20 @@ layout {
     center-focused-column "never"
     // always-center-single-column
     empty-workspace-above-first
-    default-column-display "tabbed"
+    default-column-display "normal"
     background-color "#2b303cd6"
 
     default-column-width { }
 
-    // preset-window-heights {
-    //     proportion 1.0;
-    // }
+    preset-column-widths {
+        proportion 0.5
+        proportion 1.0
+    }
+
+    preset-window-heights {
+        proportion 0.5
+        proportion 1.0
+    }
 
     focus-ring {
         off
@@ -177,7 +187,8 @@ environment {
     GTK_THEME "Qogir-Round-Dark"
     QT_QPA_PLATFORM "wayland"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
-    DISPLAY null
+    XDG_SESSION_TYPE "wayland"
+    // DISPLAY null
 }
 
 cursor {
