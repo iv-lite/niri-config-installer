@@ -15,6 +15,7 @@ export packages="\
     uwsm \
     dbus-broker \
     wayland-pipewire-idle-inhibit \
+    xwayland-satellite \
     niri \
     hypridle \
     hyprlock \
