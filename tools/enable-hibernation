@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+swap_location=/dev/swapfile
+total_memory=$(awk '/MemTotal/ { printf "%.3f \n", $2/1024/1024 }' /proc/meminfo)
+swap_size=$(($(printf "%.*f\n" 0 ${total_memory} ) + 1))
+
+sudo mkswap -U clear --size ${swap_size}G --file ${swap_location}
+sudo swapon ${swap_location}
+echo '${swap_location} none swap defaults,pri=0 0 0' | sudo tee -a /etc/fstab
