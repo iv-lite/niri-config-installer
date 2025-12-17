@@ -2,15 +2,14 @@
 
 cd "$(dirname ${BASH_SOURCE[0]})/../"
 
-cp -a ./home/. ${HOME}/
-
 sudo sed -i -e 's/#fr_CH.UTF-8 UTF-8/fr_CH.UTF-8 UTF-8/g' /etc/locale.gen
 sudo locale-gen
 sudo localectl set-keymap --no-convert fr_CH
 
 sudo chsh -s $(which zsh) $USER
 sh -c "$(curl -fsSL https://install.ohmyz.sh)" --unattended
-cp ./shell/.zshrc ${HOME}/
+
+cp -a ./home/. ${HOME}/
 
 xdg-mime default org.gnome.Nautilus.desktop inode/directory
 xdg-mime default org.gnome.Nautilus.desktop x-directory/normal
