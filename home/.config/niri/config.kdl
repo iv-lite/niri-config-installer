@@ -63,6 +63,7 @@ binds {
     Super+Alt+Up { move-window-up; }
     Super+Alt+Down { move-window-down; }
 
+    // Mod+Shift+W { consume-window-into-column; }
     Mod+Shift+Left { move-column-to-monitor-left; }
     Mod+Shift+Right { move-column-to-monitor-right; }
     Mod+Shift+Up { move-column-to-workspace-up; }
@@ -185,7 +186,7 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 environment {
     GTK_IM_MODULE "simple"
     GTK_THEME "Qogir-Round-Dark"
-    QT_QPA_PLATFORM "wayland"
+    QT_QPA_PLATFORM "wayland;xcb"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
     XDG_SESSION_TYPE "wayland"
     // DISPLAY null
