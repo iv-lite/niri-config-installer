@@ -17,7 +17,7 @@ fi
 
 echo "Installing default packages"
 . ${basedir}/packages-list
-yes | ${package_manager} -Sy --answerclean=All --answerdiff=None --answeredit=None -S \
+yes | ${package_manager} -Sy --answerclean=All --answerdiff=None --answeredit=None \
     $packages
 
 read -r -p "Do you want to enable amdgpu hardware audio/video decoding ? [y/N] " response
