@@ -3,6 +3,8 @@
 cd "$(dirname ${BASH_SOURCE[0]})"
 basedir="$(pwd)"
 
+${basedir}/enable-hibernation
+
 ${basedir}/fetcher
 
 ${basedir}/deploy
