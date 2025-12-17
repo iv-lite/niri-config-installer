@@ -7,7 +7,7 @@ basedir="$(pwd)"
 
 read -r -p "Do you want to enable the firewall ? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
-    ${package_manager} --noconfirm -S \
+    yes | ${package_manager} -Sy --answerclean=All --answerdiff=None --answeredit=None \
         ufw \
         firewalld
     
@@ -17,11 +17,13 @@ fi
 
 echo "Installing default packages"
 . ${basedir}/packages-list
-${package_manager} --noconfirm -S $packages
+yes | ${package_manager} -Sy --answerclean=All --answerdiff=None --answeredit=None -S \
+    $packages
 
 read -r -p "Do you want to enable amdgpu hardware audio/video decoding ? [y/N] " response
 if [[ "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; then
     . ${basedir}/amd-va-packages-list
-    ${package_manager} --noconfirm -S $amd_va_packages
+    yes | ${package_manager} -Sy --answerclean=All --answerdiff=None --answeredit=None \
+        $amd_va_packages
     echo "Hardware Audio/Video acceleration enabled !"
 fi

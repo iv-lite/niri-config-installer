@@ -3,12 +3,13 @@
 cd "$(dirname ${BASH_SOURCE[0]})"
 basedir="$(pwd)"
 
-pm=paru
+pm=yay
 storage_path="${basedir}/../storage/${pm}"
 if ! command -v ${pm} &>/dev/null; then
     sudo pacman -Syu --noconfirm
-    sudo pacman -S --needed --noconfirm base-devel git rustup
-    rustup default stable
+    sudo pacman -S --needed --noconfirm base-devel git
+    # sudo pacman -S --needed --noconfirm base-devel git rustup
+    # rustup default stable
 
     if [ -d $storage_path ]; then
         rm -rf $storage_path
