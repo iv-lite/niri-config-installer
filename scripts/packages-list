@@ -72,8 +72,8 @@ export packages="\
     waybar \
     glib2-devel \
     dbus \
+    wl-gammarelay \
     wlr-protocols \
-    wlr-brightness-git \
     cava \
     pavucontrol \
     clamav \

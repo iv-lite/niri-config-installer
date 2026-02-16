@@ -1,5 +1,5 @@
 input {
-    focus-follows-mouse
+    focus-follows-mouse max-scroll-amount="75%"
 
     keyboard {
         xkb {
@@ -15,6 +15,21 @@ input {
         // off
         natural-scroll
         // accel-speed 0.2
+        accel-profile "adaptive"
+        // scroll-factor 1.0
+        scroll-factor vertical=1.0 horizontal=-1.0
+        // scroll-method "no-scroll"
+        // scroll-button 273
+        // scroll-button-lock
+        // left-handed
+        // middle-emulation
+    }
+
+    touchpad {
+        // off
+        tap
+        natural-scroll
+        accel-speed 0.4
         accel-profile "adaptive"
         // scroll-factor 1.0
         scroll-factor vertical=1.0 horizontal=-1.0
