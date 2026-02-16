@@ -12,7 +12,7 @@ window-rule {
 }
 
 window-rule {
-    match app-id="org.mozilla.firefox"
+    match app-id="firefox"
     match app-id="code"
 
     open-maximized true
