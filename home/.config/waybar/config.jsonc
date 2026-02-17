@@ -159,7 +159,6 @@
   "niri/window": {
     "format": "{}",
     "separate-outputs": true,
-    "icon": true,
     "expand": true
   },
   "custom/media": {
