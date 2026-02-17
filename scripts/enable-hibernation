@@ -1,17 +1,28 @@
 #!/usr/bin/env bash
 
-swap_location=/swapfile
 total_memory=$(awk '/MemTotal/ { printf "%.3f \n", $2/1024/1024 }' /proc/meminfo)
-swap_size=$(($(printf "%.*f\n" 0 ${total_memory} ) + 1))
+swap_size=$((2 * ($(printf "%.*f\n" 0 ${total_memory} ) + 1)))
 swap_size_mb=$((${swap_size} * 1024))
 
-if [ -f ${swap_location} ]; then
-    sudo rm ${swap_location}
+# Create and activate a Swap Device
+fs_uuid=$(findmnt / -o UUID -n)
+sudo mount -m -U $fs_uuid /mnt/system-${fs_uuid}
+sudo btrfs subvolume create /mnt/system-${fs_uuid}/@swap
+sudo umount /mnt/system-${fs_uuid}
+sudo mount -m -U ${fs_uuid} -o subvol=@swap,nodatacow /swap
+
+# swapfile creation
+sudo btrfs filesystem mkswapfile --size ${swap_size}G --uuid clear /swap/swapfile
+sudo umount /swap
+
+# Add 2 entries and enable the swapfile in /etc/fstab
+if ! grep -q /swap /etc/fstab; then
+    echo "#swapfile" | sudo tee -a /etc/fstab
+    echo -e "UUID=${fs_uuid}\t/swap\tbtrfs\tsubvol=@swap,nodatacow,noatime,nospace_cache\t0\t0" | sudo tee -a /etc/fstab
+    echo -e "/swap/swapfile\tnone\tswap\tdefaults\t0\t0"$'\n' | sudo tee -a /etc/fstab
 fi
 
-sudo mkswap -U clear --size ${swap_size}G --file ${swap_location}
-sudo swapon ${swap_location}
-
-if [ ! $(grep -q ${swap_location} /etc/fstab) ]; then
-    echo "#swapfile"$'\n'"${swap_location} none swap defaults,pri=0 0 0"$'\n' | sudo tee -a /etc/fstab
+if ! grep -q swap /etc/crypttab.initramfs; then
+    echo -e "swap UUID=${fs_uuid} none tpm2-device=auto" | sudo tee -a /etc/crypttab.initramfs
+    sudo mkinitcpio -P
 fi
