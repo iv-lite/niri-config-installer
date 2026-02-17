@@ -160,18 +160,15 @@
     "tooltip": false
   },
   "niri/window": {
-    "format": "{}",
+    "format": "",
     "separate-outputs": true,
+    "icon": true,
     "expand": true
   },
   "custom/media": {
     "format": "{icon} {text}",
     "return-type": "json",
     "max-length": 40,
-    "format-icons": {
-      "spotify": "",
-      "default": "🎜"
-    },
     "escape": true,
     "exec": "$HOME/.config/waybar/media/player.py 2> /dev/null"
   },
