@@ -1,14 +1,13 @@
 // -*- mode: jsonc -*-
 {
   "layer": "bottom",
-  "margin-left": 16,
-  "margin-right": 16,
-  "margin-top": 15,
+  "margin-left": 22,
+  "margin-right": 22,
+  "margin-top": 18,
   "margin-bottom": 0,
   "spacing": 4, // Gaps between modules (4px)
   // Choose the order of the modules
   "modules-left": [
-    "hyprland/workspaces",
     "cpu",
     "memory",
     "temperature",
@@ -19,37 +18,13 @@
     "clock"
   ],
   "modules-right": [
+    "niri/window",
     "idle_inhibitor",
     "pulseaudio#audio",
     "battery",
     "tray",
     "custom/power"
   ],
-  "hyprland/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "active": "⊙",
-      "visible": "⊙",
-      "default": "●",
-      "empty": "○"
-    },
-    "persistent-workspaces": {
-      "*": 6
-    }
-  },
-  "sway/mode": {
-    "format": "<span style=\"italic\">{}</span>"
-  },
-  "sway/scratchpad": {
-    "format": "{icon} {count}",
-    "show-empty": false,
-    "format-icons": [
-      "",
-      ""
-    ],
-    "tooltip": true,
-    "tooltip-format": "{app}: {title}"
-  },
   "mpd": {
     "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
     "format-disconnected": "Disconnected ",
@@ -181,8 +156,14 @@
     "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
     "tooltip": false
   },
+  "niri/window": {
+    "format": "{}",
+    "separate-outputs": true,
+    "icon": true,
+    "expand": true
+  },
   "custom/media": {
-    "format": "{icon} {}",
+    "format": "{icon} {text}",
     "return-type": "json",
     "max-length": 40,
     "format-icons": {
