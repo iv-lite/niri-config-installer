@@ -144,12 +144,15 @@
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "pulseaudio#audio": {
-    "format": "{icon} {volume}",
-    "format-bluetooth-muted": "󰟎",
+    "format": "{icon} {volume}%",
+    "format-bluetooth": "{icon}{volume}%",
     "format-muted": "",
     "format-icons": {
       "headphone": "",
-      "default": ""
+      "default": [
+        "",
+        ""
+      ]
     },
     "on-click": "pavucontrol",
     "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%+ -l 1",

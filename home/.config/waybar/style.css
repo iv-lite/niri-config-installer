@@ -1,6 +1,6 @@
 window * {
-    font-family: "Roboto Mono";
-    font-size: 1.25rem;
+    font-family: "Roboto Mono", FontAwesome;
+    font-size: 1.2rem;
     padding: .5rem;
 }
 
@@ -74,9 +74,10 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    margin: 0 .25rem;
+    margin: 0 0.25rem;
+    padding: 0;
     color: #ffffff;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -174,7 +175,7 @@ label:focus {
 }
 
 #pulseaudio.muted {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 #wireplumber {
