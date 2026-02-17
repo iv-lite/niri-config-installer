@@ -6,7 +6,7 @@ configuration {
   lines: 2;
   history: false;
   show-icons: true;
-  icon-theme: "Qogir-Dark";
+  icon-theme: "Papirus-Dark";
 
   timeout {
       action: "kb-cancel";

@@ -67,7 +67,6 @@ export packages="\
     cpio \
     cliphist \
     qogir-gtk-theme \
-    qogir-icon-theme \
     papirus-icon-theme \
     waybar \
     glib2-devel \
