@@ -22,7 +22,8 @@ if ! grep -q /swap /etc/fstab; then
     echo -e "/swap/swapfile\tnone\tswap\tdefaults\t0\t0"$'\n' | sudo tee -a /etc/fstab
 fi
 
-if ! grep -q swap /etc/crypttab.initramfs; then
-    echo -e "swap UUID=${fs_uuid} none tpm2-device=auto" | sudo tee -a /etc/crypttab.initramfs
-    sudo mkinitcpio -P
+if ! grep -q "block resume encrypt" /etc/mkinitcpio.conf; then
+    sudo sed -i "s/block encrypt/block encrypt resume/" /etc/mkinitcpio.conf
 fi
+
+sudo mkinitcpio -P
